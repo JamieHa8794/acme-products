@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, {Component} from 'react';
+import Product from './Product';
 
 class App extends Component {
     constructor(){
@@ -23,13 +24,11 @@ class App extends Component {
                     {products.length ? 
                     products.map((product, idx) =>{
                         return(
-                        <li key={idx}>
-                            {product.name}
-                        </li>
+                            <Product product={product} key={product.id}/>
                         )
                     })
                     :
-                    ''
+                    'No Products'
                 }
                 </ul>
             </div>
